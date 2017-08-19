@@ -1,0 +1,32 @@
+<%- include header.ejs%>
+<form action="/reg" method="post">
+    <table>
+        <tr>
+            <td><span>用户名:  </span></td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td><span>密码:  </span></td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><span>确认密码:  </span></td>
+            <td><input type="password" name="repassword"></td>
+        </tr>
+        <tr>
+            <td><span>邮箱:  </span></td>
+            <td><input type="text"  name="mail"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="click me"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><%= errors%></td>
+        </tr>
+    </table>
+
+</form>
+
+<%- include footer.ejs%>
+

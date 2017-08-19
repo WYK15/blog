@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title><%= title%></title>
+</head>
+<body>
+    <header><h1 style="display: inline-block;margin-right: 150px"><%=title%></h1>
+        <span>你好:</span>
+        <% if(user){%>
+        <%=user.username%>
+        <%}else{%>
+        游客
+        <%}%>
+        <div style="width: 100px;height: 1px;display: inline-block;"></div>
+        <% if (user){%>
+        <img src="" width="50px" height="50px" style="border: solid 1px;display: inline-block">
+        <%}else{%>
+        <img src="" width="50px" height="50px" style="border: solid 1px;display: inline-block;background-color: #cccccc">
+        <%}%>
+    </header>
+
+<nav>
+    <span><a href="/">home</a></span>
+    <span><a href="/archive" title="存档">archive</a></span>
+    <span><a href="/tags" title="标签">tags</a></span>
+    <span><a href="/links" title="友情链接">links</a></span>
+    <% if (user) { %>
+    <span><a href="/upload" title="上传">upload</a></span>
+    <span><a href="/post" title="发表">post</a></span>
+    <span><a href="/logout" title="登出">logout</a></span>
+
+    <% }else{ %>
+    <span><a href="/login">login</a></span>
+    <span><a href="/reg">register</a></span>
+    <% } %>
+    <span><form action="/search" method="get"><input type="text" name="keyword" placeholder="SEARCH" class="search"></form></span>
+</nav>
+
+<article>
+    <% if (successs) { %>
+    <%= successs%>
+    <% } %>
+    <% if (errors){ %>
+    <%= errors%>
+    <% } %>

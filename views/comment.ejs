@@ -1,0 +1,23 @@
+<br>
+<p>评论区</p>
+<br>
+    <% post.comment.forEach(function(con,index){ %>
+    <a href="<%=con.website%>"><%=con.name%></a><span class="info">发表于<%=con.time%></span>
+
+        <br>
+        <p style="display: block;border-bottom: solid 1px #c7edcd;width: 100%"><%=con.content%></p><br>
+    <% })%>
+<p>留言</p>
+<form method="post">
+    <% if (user) {%>
+    姓名: <input type="text" name="name" value="<%=user.username%>"><br>
+    邮箱: <input type="text" name="email" value="<%=user.mail%>"><br>
+    网址: <input type="text" name="website" value="/u/<%=user.username%>"><br>
+    <% } else{%>
+    姓名: <input type="text" name="name" ><br>
+    邮箱: <input type="text" name="email" ><br>
+    网址: <input type="text" name="website" value="http://"><br>
+    <%}%>
+    <textarea name="content" rows="5" cols="80"></textarea>
+    <input type="submit" value="留言">
+</form>

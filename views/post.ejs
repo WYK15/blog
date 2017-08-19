@@ -1,0 +1,19 @@
+<%- include header.ejs%>
+
+<form  method="post" action="/post">
+    <span>标题: </span><br>
+    <input type="text" name="title"><br>
+    <span>标签: </span><br>
+    <input type="text" name="tag1">
+
+    <input type="text" name="tag2">
+    <input type="text" name="tag3">
+    <br>
+    <span>正文: </span><br>
+    <textarea name="post" rows="20" cols="100"></textarea>
+    <br>
+    <input type="submit" value="发表">
+</form>
+
+
+<%- include footer.ejs%>

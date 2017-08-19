@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Model/kindeditor/themes/default/default.css">
+
+</head>
+<body>
+<form  method="post">
+    <textarea id="content1" style="width:700px;height:300px;"></textarea>
+    <br />
+    <input type="submit" name="button" value="提交内容" /> (提交快捷键: Ctrl + Enter)
+</form>
+<script src="../Model/kindeditor/kindeditor-all.js"></script>
+<script src="../Model/kindeditor/lang/zh-CN.js"></script>
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+        window.editor = K.create("#content1");
+        });
+//  document.getElementById("ko").innerHTML ="dddaa";
+    </script>
+</body>
+</html>

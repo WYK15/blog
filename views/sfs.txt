@@ -1,0 +1,24 @@
+ <% var flag = 1;%>
+    <% if(user && user.username == post.username) {%>
+    <span><a href="/edit/<%=post.username%>/<%=post.title%>/<%=post.time%>" class="edit">编辑</a></span>
+    <span><a href="/delete/<%= post.username%>/<%= post.title%>/<%= post.time%>" class="delete">删除</a></span>
+
+    <%}else{%>
+    <% flag = 0;%>
+    <%}%>
+
+    <%if (user.reprint_info.reprint_from!=undefined && user.username == post.reprint_info.reprint_from.username) {%>
+    <%flag = 0;%>
+    <%}%>
+
+    <% if(post.reprint_info.reprint_to !=undefined){ %>
+    <%post.reprint_info.reprint_to.forEach(function(to,index){%>
+    <% if (user.username==to.username){%>
+    <%flag=0;%>
+    <%}%>
+    <%})%>
+    <%}%>
+
+    <%if (flag){%>
+    <span><a href="/reprint/<%=post.name%>/<%post.time%>/<%post.title%>" class="edit"> 转载</a></span>
+    <%}%>
